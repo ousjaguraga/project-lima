@@ -1,17 +1,4 @@
-# Front End Assignment Boilerplate
-
-This project can serve as a baseline for your front end assignment. Take some
-time to familiarize yourself with the structure, configuration and scripts.
-Depending on how you choose to implement your solution you may find that you
-need to delete or change parts of this base setup — feel free to do so. We have
-set this project up create a more accurate image of what our expectations are,
-and to help you get started. If you feel like it does not help you on your way,
-feel free to discard it and create your own. However, it might prove useful to
-look through this boilerplate regardless to get a better idea of our
-expectations.
-
-Simply clone this project and get started. You can replace this readme with your
-own when you are finished.
+# Front End Assignment Proposed Solution
 
 ## Available scripts
 
@@ -21,17 +8,41 @@ To start the project, simply run:
 npm run start
 ```
 
-To run the linter, execute the command:
+To classify a dog
 
-```bash
-npm run lint
+```
+ 1: click load model
+
 ```
 
-optionally, you can append `:fix` to automatically fix any auto-fixable linting
-issues.
+When the model is loaded you will be navigated to the upload image state Pease
+select a photo of a dog
 
-To test you application, use:
-
-```bash
-npm run test
 ```
+ 2: click upload image
+
+```
+
+To classify the image
+
+```
+3: click identify breed
+
+```
+
+The model will attempt to classify
+
+If it succeeds click load gallery to load a gallery of dogs of the same kind
+
+```
+4: click load gallery
+
+```
+
+If it fails you'll be taken to the upload image page
+
+```select an image of a dog to try again
+
+```
+
+To start again press start again
