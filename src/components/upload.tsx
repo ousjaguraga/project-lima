@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, LegacyRef } from 'react';
+import React, { ChangeEventHandler } from 'react';
 
 interface UploadProperties {
   changeHandler: ChangeEventHandler;
