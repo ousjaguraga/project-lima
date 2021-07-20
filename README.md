@@ -19,7 +19,7 @@ When the model is loaded you will be navigated to the upload image state Pease
 select a photo of a dog
 
 ```
- 2: click upload image
+2: click upload image
 
 ```
 
