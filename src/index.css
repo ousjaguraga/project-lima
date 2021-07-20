@@ -1,0 +1,119 @@
+/* Global CSS styles applied to the whole app */
+
+body {
+  background: #000;
+  margin: 0;
+}
+
+#main-header {
+  background: #000;
+  color: #ebf4f4;
+  margin-top: 0;
+  text-align: center;
+}
+.gallery {
+  background: #000f00;
+  margin: auto;
+  min-height: 400px;
+  min-width: 500px;
+}
+.galleryContainer {
+  /* background: aqua; */
+  margin: auto;
+  margin-left: 2.5vw;
+  padding: revert;
+}
+.error {
+  background: #792f2f;
+  color: #fff;
+  font-size: -webkit-xxx-large;
+  margin: auto;
+  text-align: center;
+  width: fit-content;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+}
+#image-container {
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 5vh;
+  max-width: 70vw;
+  min-width: 70vw;
+}
+
+#preview-image {
+  height: auto;
+  margin: auto;
+  max-height: stretch;
+  padding: 3px;
+  width: 600px;
+}
+
+.action-btn {
+  background: #00f;
+  border: 8px #fff;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.5em;
+  font-size: 2em;
+  position: absolute;
+}
+
+.action-btn:disabled {
+  background: #d6d6e0;
+}
+
+#action-btn-container {
+  align-items: center;
+  border: 3px solid #fff;
+  border-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2vw;
+}
+
+#progress {
+  align-items: flex-start;
+  align-self: flex-end;
+  border-bottom: 3px solid #fff;
+  display: flex;
+  font-size: larger;
+  height: 7vh;
+  text-align: center;
+  transition: width 3s;
+  width: 100%;
+}
+
+.progressChild {
+  align-self: stretch;
+  background: #2a983e;
+  margin: 20;
+  min-width: 20%;
+}
+
+#result {
+  background: #404440;
+  color: #fff;
+  font-size: xx-large;
+  margin: auto;
+  margin-top: 15px;
+  text-align: center;
+  width: fit-content;
+}
+#upload {
+  height: 15vw;
+  left: 0%;
+  position: absolute;
+  width: 15vw;
+}
+
+.img {
+  margin: auto;
+}
