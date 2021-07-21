@@ -16,7 +16,6 @@ import { flow } from './components/flow';
 
 tf.getBackend();
 
-console.log(process.env.PUBLIC_URL);
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'next':
