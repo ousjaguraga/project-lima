@@ -117,3 +117,30 @@ h1 {
 .img {
   margin: auto;
 }
+
+#loading {
+  align-self: center;
+  animation: spin 2s linear infinite;
+  border: 27px solid #808080;
+  border-left: 27px solid #00ff;
+  border-radius: 50%;
+  height: 150px;
+  margin: auto;
+  min-height: 150px;
+  width: 150px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+div#loadingContainer {
+  display: flex;
+  height: 100vh;
+  width: auto;
+}
