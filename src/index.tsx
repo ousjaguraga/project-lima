@@ -13,6 +13,7 @@ import Gallery from './components/gallery';
 import { Action, State, StateKey } from './types';
 import Error from './components/errorbox';
 import { flow } from './components/flow';
+import Loading from './components/loading';
 
 tf.getBackend();
 
@@ -117,10 +118,22 @@ const App: FC = () => {
 
       let breed = '';
       for (let i = 0; i < s.length; i++) {
-        console.log(s[i]);
-        if (breedKeys.includes(s[i].replace(',', ''))) {
+        // Test each key
+        if (breedKeys.includes(s[i].replace(',', '').toLowerCase())) {
           breed = s[i];
-
+          return parseBreedUrl(
+            String(breed)
+              .replace(',', '')
+              .split(' '),
+          );
+          // Test combination of key and 2
+        } else if (
+          breedKeys.includes(
+            s[i].replace(',', '').toLowerCase() +
+              s[i + 1].replace(',', '').toLowerCase(),
+          )
+        ) {
+          breed = s[i] + '' + s[i + 1];
           return parseBreedUrl(
             String(breed)
               .replace(',', '')
@@ -228,45 +241,51 @@ const App: FC = () => {
   };
 
   return (
-    <div>
-      <h1 id="main-header">Welcome to Dog breed</h1>
-      <div id="image-container">
-        <img id="preview-image" src={link} ref={imgRef} />
+    <>
+      {!state.isLoading ? (
+        <div>
+          <h1 id="main-header">Welcome to Dog breed</h1>
+          <div id="image-container">
+            <img id="preview-image" src={link} ref={imgRef} />
 
-        <Upload changeHandler={handleFileChange} inputRef={inputRef} />
-      </div>
-      <h1 id="result">{state.result}</h1>
-      <div id="action-btn-container">
-        <button
-          disabled={state.isLoading}
-          className="action-btn"
-          id="show-breed"
-          onClick={handleActionButton}
-        >
-          {state.buttonText}
-        </button>{' '}
-        <Progress state={state} />
-      </div>
-      <div className="galleryContainer">
-        {typeof state.links === 'object' ? (
-          <>
-            {state.links?.map((link, key) => (
-              <LazyLoadImage
-                src={link}
-                alt=""
-                key={key}
-                height="400px"
-                width="520px"
-                effect="blur"
-                placeholder={<Gallery />}
-              />
-            ))}
-          </>
-        ) : (
-          <Error errorMessage={state.error} />
-        )}
-      </div>
-    </div>
+            <Upload changeHandler={handleFileChange} inputRef={inputRef} />
+          </div>
+          <h1 id="result">{state.result}</h1>
+          <div id="action-btn-container">
+            <button
+              disabled={state.isLoading}
+              className="action-btn"
+              id="show-breed"
+              onClick={handleActionButton}
+            >
+              {state.buttonText}
+            </button>{' '}
+            <Progress state={state} />
+          </div>
+          <div className="galleryContainer">
+            {typeof state.links === 'object' ? (
+              <>
+                {state.links?.map((link, key) => (
+                  <LazyLoadImage
+                    src={link}
+                    alt=""
+                    key={key}
+                    height="400px"
+                    width="520px"
+                    effect="blur"
+                    placeholder={<Gallery />}
+                  />
+                ))}
+              </>
+            ) : (
+              <Error errorMessage={state.error} />
+            )}
+          </div>
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 
