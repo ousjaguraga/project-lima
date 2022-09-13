@@ -5,7 +5,7 @@
     "@types/jest": "^25.1.2",
     "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/webpack-env": "^1.15.1",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^10.4.10",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
